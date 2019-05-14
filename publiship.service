@@ -1,0 +1,12 @@
+[Unit]
+Description=Publish IP Service
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=pi
+ExecStartPre=/bin/sleep 15
+ExecStart=/home/pi/publish-ip.sh
+
+[Install]
+WantedBy=multi-user.target
